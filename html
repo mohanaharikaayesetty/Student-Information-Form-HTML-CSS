@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="styles.css">
+<title>Student Information Form</title>
+<script>
+function validateForm() {
+    var rollno = document.getElementById('rollno').value;
+    var name = document.getElementById('name').value;
+    var dept = document.getElementById('dept').value;
+    var marks10 = document.getElementById('marks10').value;
+    var marks12 = document.getElementById('marks12').value;
+    var percentage = document.getElementById('percentage').value;
+
+    if (rollno === '' || name === '' || dept === '' || marks10 === '' || marks12 === '' || percentage === '') {
+        alert('Please fill out all required fields.');
+        return false;
+    }
+    return true;
+}
+</script>
+</head>
+<body>
+<div class="form-container">
+    <h2 style="text-align: center; color:black;"> Student Information Form</h2>
+    <form id="student-form"  method="POST" onsubmit="return validateForm()">
+        <div class="form">
+            <label>Roll Number *</label>
+            <input type="text" name="rollno" placeholder="Enter Roll Number">
+        </div><br>
+        <div class="form">
+            <label>Student Name *</label>
+            <input type="text" name="name" placeholder="Enter Student Name" >
+        </div><br>
+        <div class="form">
+            <label>Department *</label>
+            <select>
+                <option value="">Select Department</option>
+                <option value="CSE">CSE</option>
+                <option value="ECE">ECE</option>
+                <option value="EEE">EEE</option>
+                 <option value="MBA">MBA</option>
+                  <option value="BBA">BBA</option>
+                   <option value="M TECH">M TECH</option>
+                   <option value="MECH">Mechanical Engineering</option>
+                <option value="CIVIL">Civil Engineering</option>
+            </select>
+        </div><br>
+        <div class="form">
+            <label>10th Marks *</label>
+            <input type="number"  name="marks10" placeholder="Enter 10th Marks">
+        </div><br>
+        <div class="form">
+            <label>12th Marks *</label>
+            <input type="number" name="marks12" placeholder="Enter 12th Marks" >
+        </div><br>
+        <div class="form">
+            <label >Degree Percentage *</label>
+            <input type="number"  name="percentage" step="0.01" placeholder="Enter Degree Percentage" required>
+        </div>
+        <div class="button-container">
+            <button type="submit" class="submit-btn">Submit</button>
+            <button type="button" class="cancel-btn">Cancel</button>
+        </div>
+    </form>
+</div>
+</body>
+</html>
